@@ -49,7 +49,7 @@
    * transition
    */
 
-  --transition: 0.15s ease-in-out;
+  --transition: 300ms ease-in-out;
 
   /**
     * spacing
@@ -221,6 +221,13 @@ html {
   padding: 8px 15px;
   color: var(--white);
   font-size: var(--fs-3);
+  transition: var(--transition);
+  position: relative;
+}
+
+
+.nav-list--item:hover {
+  color: var(--red-crayola);
 }
 
 .nav-form {
@@ -276,5 +283,23 @@ html {
     padding: unset;
     opacity: 1;
     visibility: visible;
+  }
+
+  .nav-list--item::after {
+    --scaleY: scaleY(0);
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) var(--scaleY);
+    transform-origin: bottom;
+    width: 3px;
+    height: 15px;
+    background: linear-gradient(to top, var(--red-crayola), transparent);
+    transition: var(--transition);
+  }
+
+  .nav-list--item:hover::after {
+    transform: scaleY(1);
   }
 }
