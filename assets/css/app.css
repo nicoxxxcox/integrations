@@ -176,6 +176,9 @@ html {
   --gray-web: hsl(0, 0%, 38%);
 }
 
+
+/* HEADER */
+
 .header {
   background: var(--rich-black-fogra-39);
   padding: 20px 0;
@@ -259,7 +262,7 @@ html {
   }
 }
 
-@media (min-width : 1024px) {
+@media (min-width : 1200px) {
 
   .header-wrapper {
     justify-content: space-between;
@@ -284,6 +287,10 @@ html {
     opacity: 1;
     visibility: visible;
     transform: scale(1);
+  }
+
+  .nav-list--item{
+    font-size: var(--fs-6);
   }
 
   .nav-list--item::after {
